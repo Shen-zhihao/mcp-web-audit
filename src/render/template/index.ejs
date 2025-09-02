@@ -1,0 +1,8 @@
+# `<%- packageJson.name %>`审计结果
+
+<% if(audit.summary.total) { %>
+<%- include('./audit.ejs'); %>
+<% } %>
+<% if(audit.summary.total === 0) { %>
+你项目的所有直接依赖和间接依赖都没有发现任何风险漏洞。
+<% } %>

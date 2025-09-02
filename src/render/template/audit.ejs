@@ -1,0 +1,30 @@
+您所审计的工程总共有 **<%- audit.summary.total %>** 个风险漏洞。
+
+其中：
+
+- **<%- desc.severityLevels.critical %>漏洞**：共计 **<%- audit.summary.critical %>** 个
+- **<%- desc.severityLevels.high %>漏洞**：共计 **<%- audit.summary.high %>** 个
+- **<%- desc.severityLevels.moderate %>漏洞**：共计 **<%- audit.summary.moderate %>** 个
+- **<%- desc.severityLevels.low %>漏洞**：共计 **<%- audit.summary.low %>** 个
+
+> 说明：
+>
+> - **<%- desc.severityLevels.critical %>**漏洞被认为是极其严重的，应该立即修复。
+> - **<%- desc.severityLevels.high %>**漏洞被认为是严重的，应该尽快修复。
+> - **<%- desc.severityLevels.moderate %>**漏洞被认为是中等严重的，可以选择在时间允许时修复。
+> - **<%- desc.severityLevels.low %>**漏洞被认为是轻微的，可以根据自行需要进行修复。
+
+下面是漏洞的详细信息
+
+<% if (audit.summary.critical) { %>
+<%- include('./detail.ejs', {type:'critical'}); %>
+<% } %>
+<% if (audit.summary.high) { %>
+<%- include('./detail.ejs', {type:'high'}); %>
+<% } %>
+<% if (audit.summary.moderate) { %>
+<%- include('./detail.ejs', {type:'moderate'}); %>
+<% } %>
+<% if (audit.summary.low) { %>
+<%- include('./detail.ejs', {type:'low'}); %> 
+<% } %>

@@ -1,0 +1,32 @@
+### `<%- item.name -%>`
+
+**漏洞描述**：
+<% item.problems.forEach((problem) => { %>
+- <%- problem.title %>
+  - npm漏洞编号：`<%- problem.source %>`
+  - 漏洞详细说明：<%- problem.url %>
+  - 漏洞等级：<%- desc.severityLevels[problem.severity] %>
+  - 受影响的版本：`<%- problem.range %>`
+<% }); %>
+
+**依赖关系**：
+<% if(item.depChains.length === 0) { %>
+<% if(item.name === packageJson.name) { %>
+当前工程
+<% } else { %>
+- `<%- packageJson.name %>` / <%- item.name %>
+<% } %>
+<% } else { %>
+<% item.depChains.forEach((chain) => { %>
+<% if(chain.length === 1 && chain[0] === packageJson.name) { %>
+当前工程
+<% } else { %>
+- `<%- packageJson.name %>` / <%- chain.map(c=>`\`${c}\``).join(' / ') %>
+<% } %>
+  <% }); %>
+  <% } %>
+
+**漏洞包所在目录**：
+<% item.nodes.forEach((path) => { %>
+- `<%- path %>`
+<% }); %>

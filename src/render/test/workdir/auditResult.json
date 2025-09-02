@@ -1,0 +1,2101 @@
+{
+  "vulnerabilities": {
+    "critical": [
+      {
+        "name": "ejs",
+        "severity": "critical",
+        "problems": [
+          {
+            "source": 1089270,
+            "name": "ejs",
+            "dependency": "ejs",
+            "title": "ejs template injection vulnerability",
+            "url": "https://github.com/advisories/GHSA-phwq-j96m-2c2q",
+            "severity": "critical",
+            "cwe": ["CWE-74"],
+            "cvss": {
+              "score": 9.8,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+            },
+            "range": "<3.1.7"
+          },
+          {
+            "source": 1098366,
+            "name": "ejs",
+            "dependency": "ejs",
+            "title": "ejs lacks certain pollution protection",
+            "url": "https://github.com/advisories/GHSA-ghr5-ch3p-vcr6",
+            "severity": "moderate",
+            "cwe": ["CWE-693", "CWE-1321"],
+            "cvss": {
+              "score": 4,
+              "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            },
+            "range": "<3.1.10"
+          }
+        ],
+        "nodes": ["node_modules/ejs"],
+        "depChains": [["webpack-bundle-analyzer", "ejs"]]
+      },
+      {
+        "name": "form-data",
+        "severity": "critical",
+        "problems": [
+          {
+            "source": 1106509,
+            "name": "form-data",
+            "dependency": "form-data",
+            "title": "form-data uses unsafe random function in form-data for choosing boundary",
+            "url": "https://github.com/advisories/GHSA-fjxv-7rqg-78g4",
+            "severity": "critical",
+            "cwe": ["CWE-330"],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<2.5.4"
+          }
+        ],
+        "nodes": ["node_modules/form-data"],
+        "depChains": [
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "@vue/cli-plugin-router",
+            "@vue/cli-shared-utils",
+            "request",
+            "form-data"
+          ],
+          [
+            "@vue/cli-service",
+            "@vue/cli-plugin-router",
+            "@vue/cli-shared-utils",
+            "request",
+            "form-data"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "@vue/cli-plugin-router",
+            "@vue/cli-shared-utils",
+            "request",
+            "form-data"
+          ]
+        ]
+      },
+      {
+        "name": "loader-utils",
+        "severity": "critical",
+        "problems": [
+          {
+            "source": 1094088,
+            "name": "loader-utils",
+            "dependency": "loader-utils",
+            "title": "Prototype pollution in webpack loader-utils",
+            "url": "https://github.com/advisories/GHSA-76p3-8jx3-jpfq",
+            "severity": "critical",
+            "cwe": ["CWE-1321"],
+            "cvss": {
+              "score": 9.8,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+            },
+            "range": "<1.4.1"
+          }
+        ],
+        "nodes": ["node_modules/html-webpack-plugin/node_modules/loader-utils"],
+        "depChains": [["html-webpack-plugin", "loader-utils"]]
+      },
+      {
+        "name": "request",
+        "severity": "critical",
+        "problems": [
+          {
+            "source": 1096727,
+            "name": "request",
+            "dependency": "request",
+            "title": "Server-Side Request Forgery in Request",
+            "url": "https://github.com/advisories/GHSA-p8p7-x288-28g6",
+            "severity": "moderate",
+            "cwe": ["CWE-918"],
+            "cvss": {
+              "score": 6.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            },
+            "range": "<=2.88.2"
+          }
+        ],
+        "nodes": ["node_modules/request"],
+        "depChains": [
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "@vue/cli-plugin-router",
+            "@vue/cli-shared-utils",
+            "request"
+          ],
+          [
+            "@vue/cli-service",
+            "@vue/cli-plugin-router",
+            "@vue/cli-shared-utils",
+            "request"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "@vue/cli-plugin-router",
+            "@vue/cli-shared-utils",
+            "request"
+          ]
+        ]
+      }
+    ],
+    "high": [
+      {
+        "name": "axios",
+        "range": "0.8.1",
+        "nodes": ["."],
+        "depChains": [],
+        "problems": [
+          {
+            "source": 1090049,
+            "name": "axios",
+            "dependency": "axios",
+            "title": "Axios vulnerable to Server-Side Request Forgery",
+            "url": "https://github.com/advisories/GHSA-4w2v-q235-vp99",
+            "severity": "moderate",
+            "cwe": ["CWE-918"],
+            "cvss": {
+              "score": 5.9,
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+            },
+            "range": "<0.21.1"
+          },
+          {
+            "source": 1091722,
+            "name": "axios",
+            "dependency": "axios",
+            "title": "Denial of Service in axios",
+            "url": "https://github.com/advisories/GHSA-42xw-2xvc-qx8m",
+            "severity": "high",
+            "cwe": ["CWE-20", "CWE-755"],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": "<=0.18.0"
+          },
+          {
+            "source": 1097679,
+            "name": "axios",
+            "dependency": "axios",
+            "title": "Axios Cross-Site Request Forgery Vulnerability",
+            "url": "https://github.com/advisories/GHSA-wf5p-g6vw-rhxx",
+            "severity": "moderate",
+            "cwe": ["CWE-352"],
+            "cvss": {
+              "score": 6.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            },
+            "range": ">=0.8.1 <0.28.0"
+          },
+          {
+            "source": 1102326,
+            "name": "axios",
+            "dependency": "axios",
+            "title": "axios Inefficient Regular Expression Complexity vulnerability",
+            "url": "https://github.com/advisories/GHSA-cph5-m8f7-6c5x",
+            "severity": "high",
+            "cwe": ["CWE-400", "CWE-1333"],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": "<0.21.2"
+          },
+          {
+            "source": 1103617,
+            "name": "axios",
+            "dependency": "axios",
+            "title": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL",
+            "url": "https://github.com/advisories/GHSA-jr5f-v2jv-69x6",
+            "severity": "high",
+            "cwe": ["CWE-918"],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<0.30.0"
+          }
+        ],
+        "severity": "high"
+      },
+      {
+        "name": "axios",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1097679,
+            "name": "axios",
+            "dependency": "axios",
+            "title": "Axios Cross-Site Request Forgery Vulnerability",
+            "url": "https://github.com/advisories/GHSA-wf5p-g6vw-rhxx",
+            "severity": "moderate",
+            "cwe": ["CWE-352"],
+            "cvss": {
+              "score": 6.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            },
+            "range": ">=0.8.1 <0.28.0"
+          },
+          {
+            "source": 1103617,
+            "name": "axios",
+            "dependency": "axios",
+            "title": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL",
+            "url": "https://github.com/advisories/GHSA-jr5f-v2jv-69x6",
+            "severity": "high",
+            "cwe": ["CWE-918"],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<0.30.0"
+          }
+        ],
+        "nodes": ["node_modules/axios"],
+        "depChains": [["axios"]]
+      },
+      {
+        "name": "braces",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1098094,
+            "name": "braces",
+            "dependency": "braces",
+            "title": "Uncontrolled resource consumption in braces",
+            "url": "https://github.com/advisories/GHSA-grv7-fg5c-xmjg",
+            "severity": "high",
+            "cwe": ["CWE-400", "CWE-1050"],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": "<3.0.3"
+          }
+        ],
+        "nodes": ["node_modules/braces"],
+        "depChains": [
+          [
+            "@intervolga/optimize-cssnano-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "mini-css-extract-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "braces"
+          ],
+          ["webpack-dev-server", "chokidar", "braces"],
+          [
+            "@intervolga/optimize-cssnano-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "mini-css-extract-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "webpack-dev-server",
+            "chokidar",
+            "anymatch",
+            "micromatch",
+            "braces"
+          ],
+          ["globby", "fast-glob", "micromatch", "braces"],
+          [
+            "@types/webpack-dev-server",
+            "http-proxy-middleware",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "webpack-dev-server",
+            "http-proxy-middleware",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@intervolga/optimize-cssnano-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "mini-css-extract-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "webpack-dev-server",
+            "chokidar",
+            "readdirp",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@intervolga/optimize-cssnano-plugin",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          ["@vue/cli-plugin-babel", "webpack", "micromatch", "braces"],
+          [
+            "@vue/cli-plugin-babel",
+            "cache-loader",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          ["mini-css-extract-plugin", "webpack", "micromatch", "braces"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          ["terser-webpack-plugin", "webpack", "micromatch", "braces"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "micromatch",
+            "braces"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "micromatch",
+            "braces"
+          ]
+        ]
+      },
+      {
+        "name": "html-minifier",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1105440,
+            "name": "html-minifier",
+            "dependency": "html-minifier",
+            "title": "kangax html-minifier REDoS vulnerability",
+            "url": "https://github.com/advisories/GHSA-pfq8-rq6v-vf5m",
+            "severity": "high",
+            "cwe": ["CWE-400", "CWE-1333"],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": "<=4.0.0"
+          }
+        ],
+        "nodes": ["node_modules/html-minifier"],
+        "depChains": [["html-webpack-plugin", "html-minifier"]]
+      },
+      {
+        "name": "http-proxy-middleware",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1100223,
+            "name": "http-proxy-middleware",
+            "dependency": "http-proxy-middleware",
+            "title": "Denial of service in http-proxy-middleware",
+            "url": "https://github.com/advisories/GHSA-c7qv-q95q-8v27",
+            "severity": "high",
+            "cwe": ["CWE-400"],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": "<2.0.7"
+          },
+          {
+            "source": 1104105,
+            "name": "http-proxy-middleware",
+            "dependency": "http-proxy-middleware",
+            "title": "http-proxy-middleware allows fixRequestBody to proceed even if bodyParser has failed",
+            "url": "https://github.com/advisories/GHSA-9gqv-wp59-fq42",
+            "severity": "moderate",
+            "cwe": ["CWE-754"],
+            "cvss": {
+              "score": 4,
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:N"
+            },
+            "range": ">=1.3.0 <2.0.9"
+          },
+          {
+            "source": 1104106,
+            "name": "http-proxy-middleware",
+            "dependency": "http-proxy-middleware",
+            "title": "http-proxy-middleware can call writeBody twice because \"else if\" is not used",
+            "url": "https://github.com/advisories/GHSA-4www-5p9h-95mh",
+            "severity": "moderate",
+            "cwe": ["CWE-670"],
+            "cvss": {
+              "score": 4,
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:N/A:L"
+            },
+            "range": ">=1.3.0 <2.0.8"
+          }
+        ],
+        "nodes": [
+          "node_modules/http-proxy-middleware",
+          "node_modules/webpack-dev-server/node_modules/http-proxy-middleware"
+        ],
+        "depChains": [
+          ["@types/webpack-dev-server", "http-proxy-middleware"],
+          ["webpack-dev-server", "http-proxy-middleware"]
+        ]
+      },
+      {
+        "name": "ip",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1101851,
+            "name": "ip",
+            "dependency": "ip",
+            "title": "ip SSRF improper categorization in isPublic",
+            "url": "https://github.com/advisories/GHSA-2p57-rm9w-gvfp",
+            "severity": "high",
+            "cwe": ["CWE-918"],
+            "cvss": {
+              "score": 8.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+            },
+            "range": "<=2.0.1"
+          }
+        ],
+        "nodes": ["node_modules/ip"],
+        "depChains": [
+          [
+            "webpack-dev-server",
+            "bonjour",
+            "multicast-dns",
+            "dns-packet",
+            "ip"
+          ],
+          ["webpack-dev-server", "ip"]
+        ]
+      },
+      {
+        "name": "json5",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1096543,
+            "name": "json5",
+            "dependency": "json5",
+            "title": "Prototype Pollution in JSON5 via Parse Method",
+            "url": "https://github.com/advisories/GHSA-9c47-m6qq-7p4h",
+            "severity": "high",
+            "cwe": ["CWE-1321"],
+            "cvss": {
+              "score": 7.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:H"
+            },
+            "range": "<1.0.2"
+          }
+        ],
+        "nodes": ["node_modules/html-webpack-plugin/node_modules/json5"],
+        "depChains": [["html-webpack-plugin", "loader-utils", "json5"]]
+      },
+      {
+        "name": "micromatch",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1098681,
+            "name": "micromatch",
+            "dependency": "micromatch",
+            "title": "Regular Expression Denial of Service (ReDoS) in micromatch",
+            "url": "https://github.com/advisories/GHSA-952p-6rrq-rcjv",
+            "severity": "moderate",
+            "cwe": ["CWE-1333"],
+            "cvss": {
+              "score": 5.3,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            },
+            "range": "<4.0.8"
+          }
+        ],
+        "nodes": ["node_modules/micromatch"],
+        "depChains": [
+          [
+            "@intervolga/optimize-cssnano-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "mini-css-extract-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "anymatch",
+            "micromatch"
+          ],
+          ["webpack-dev-server", "chokidar", "anymatch", "micromatch"],
+          ["globby", "fast-glob", "micromatch"],
+          ["@types/webpack-dev-server", "http-proxy-middleware", "micromatch"],
+          ["webpack-dev-server", "http-proxy-middleware", "micromatch"],
+          [
+            "@intervolga/optimize-cssnano-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "mini-css-extract-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "terser-webpack-plugin",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "watchpack",
+            "watchpack-chokidar2",
+            "chokidar",
+            "readdirp",
+            "micromatch"
+          ],
+          ["webpack-dev-server", "chokidar", "readdirp", "micromatch"],
+          ["@intervolga/optimize-cssnano-plugin", "webpack", "micromatch"],
+          ["@vue/cli-plugin-babel", "webpack", "micromatch"],
+          ["@vue/cli-plugin-babel", "cache-loader", "webpack", "micromatch"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "cache-loader",
+            "webpack",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "file-loader",
+            "webpack",
+            "micromatch"
+          ],
+          ["mini-css-extract-plugin", "webpack", "micromatch"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "terser-webpack-plugin",
+            "webpack",
+            "micromatch"
+          ],
+          ["terser-webpack-plugin", "webpack", "micromatch"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "micromatch"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "url-loader",
+            "webpack",
+            "micromatch"
+          ]
+        ]
+      },
+      {
+        "name": "mockjs",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1095258,
+            "name": "mockjs",
+            "dependency": "mockjs",
+            "title": "mockjs vulnerable to Prototype Pollution via the Util.extend function",
+            "url": "https://github.com/advisories/GHSA-mh8j-9jvh-gjf6",
+            "severity": "high",
+            "cwe": ["CWE-1321"],
+            "cvss": {
+              "score": 8.2,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H"
+            },
+            "range": "<=1.1.0"
+          }
+        ],
+        "nodes": ["node_modules/mockjs"],
+        "depChains": [["mockjs"]]
+      },
+      {
+        "name": "node-forge",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1088227,
+            "name": "node-forge",
+            "dependency": "node-forge",
+            "title": "Prototype Pollution in node-forge debug API.",
+            "url": "https://github.com/advisories/GHSA-5rrq-pxf6-6jx5",
+            "severity": "low",
+            "cwe": ["CWE-1321"],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<1.0.0"
+          },
+          {
+            "source": 1088229,
+            "name": "node-forge",
+            "dependency": "node-forge",
+            "title": "URL parsing in node-forge could lead to undesired behavior.",
+            "url": "https://github.com/advisories/GHSA-gf8q-jrpm-jvxq",
+            "severity": "low",
+            "cwe": ["CWE-601"],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<1.0.0"
+          },
+          {
+            "source": 1088746,
+            "name": "node-forge",
+            "dependency": "node-forge",
+            "title": "Improper Verification of Cryptographic Signature in `node-forge`",
+            "url": "https://github.com/advisories/GHSA-2r2c-g63r-vccr",
+            "severity": "moderate",
+            "cwe": ["CWE-347"],
+            "cvss": {
+              "score": 5.3,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+            },
+            "range": "<1.3.0"
+          },
+          {
+            "source": 1093719,
+            "name": "node-forge",
+            "dependency": "node-forge",
+            "title": "Open Redirect in node-forge",
+            "url": "https://github.com/advisories/GHSA-8fr3-hfg3-gpgp",
+            "severity": "moderate",
+            "cwe": ["CWE-601"],
+            "cvss": {
+              "score": 6.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            },
+            "range": "<1.0.0"
+          },
+          {
+            "source": 1102321,
+            "name": "node-forge",
+            "dependency": "node-forge",
+            "title": "Improper Verification of Cryptographic Signature in node-forge",
+            "url": "https://github.com/advisories/GHSA-x4jg-mjrx-434g",
+            "severity": "high",
+            "cwe": ["CWE-347"],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            },
+            "range": "<1.3.0"
+          },
+          {
+            "source": 1102322,
+            "name": "node-forge",
+            "dependency": "node-forge",
+            "title": "Improper Verification of Cryptographic Signature in node-forge",
+            "url": "https://github.com/advisories/GHSA-cfm4-qjh2-4765",
+            "severity": "high",
+            "cwe": ["CWE-347"],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            },
+            "range": "<1.3.0"
+          }
+        ],
+        "nodes": ["node_modules/node-forge"],
+        "depChains": [["webpack-dev-server", "selfsigned", "node-forge"]]
+      },
+      {
+        "name": "nth-check",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1095141,
+            "name": "nth-check",
+            "dependency": "nth-check",
+            "title": "Inefficient Regular Expression Complexity in nth-check",
+            "url": "https://github.com/advisories/GHSA-rp65-9cf3-cjxr",
+            "severity": "high",
+            "cwe": ["CWE-1333"],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": "<2.0.1"
+          }
+        ],
+        "nodes": ["node_modules/svgo/node_modules/nth-check"],
+        "depChains": [["postcss-svgo", "svgo", "css-select", "nth-check"]]
+      },
+      {
+        "name": "webpack-dev-middleware",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1096729,
+            "name": "webpack-dev-middleware",
+            "dependency": "webpack-dev-middleware",
+            "title": "Path traversal in webpack-dev-middleware",
+            "url": "https://github.com/advisories/GHSA-wr3j-pwj9-hqq6",
+            "severity": "high",
+            "cwe": ["CWE-22"],
+            "cvss": {
+              "score": 7.4,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N"
+            },
+            "range": "<=5.3.3"
+          }
+        ],
+        "nodes": ["node_modules/webpack-dev-middleware"],
+        "depChains": [["webpack-dev-server", "webpack-dev-middleware"]]
+      },
+      {
+        "name": "webpack-dev-server",
+        "severity": "high",
+        "problems": [
+          {
+            "source": 1105256,
+            "name": "webpack-dev-server",
+            "dependency": "webpack-dev-server",
+            "title": "webpack-dev-server users' source code may be stolen when they access a malicious web site with non-Chromium based browser",
+            "url": "https://github.com/advisories/GHSA-9jgg-88mc-972h",
+            "severity": "moderate",
+            "cwe": ["CWE-346"],
+            "cvss": {
+              "score": 6.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            },
+            "range": "<=5.2.0"
+          },
+          {
+            "source": 1105257,
+            "name": "webpack-dev-server",
+            "dependency": "webpack-dev-server",
+            "title": "webpack-dev-server users' source code may be stolen when they access a malicious web site",
+            "url": "https://github.com/advisories/GHSA-4v9v-hfq4-rm2v",
+            "severity": "moderate",
+            "cwe": ["CWE-749"],
+            "cvss": {
+              "score": 5.3,
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+            },
+            "range": "<=5.2.0"
+          }
+        ],
+        "nodes": ["node_modules/webpack-dev-server"],
+        "depChains": [["webpack-dev-server"]]
+      }
+    ],
+    "moderate": [
+      {
+        "name": "postcss",
+        "severity": "moderate",
+        "problems": [
+          {
+            "source": 1094544,
+            "name": "postcss",
+            "dependency": "postcss",
+            "title": "PostCSS line return parsing error",
+            "url": "https://github.com/advisories/GHSA-7fh5-64p2-3v2j",
+            "severity": "moderate",
+            "cwe": ["CWE-74", "CWE-144"],
+            "cvss": {
+              "score": 5.3,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+            },
+            "range": "<8.4.31"
+          }
+        ],
+        "nodes": ["node_modules/postcss"],
+        "depChains": [
+          ["@intervolga/optimize-cssnano-plugin", "postcss"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "@vue/component-compiler-utils",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "@vue/component-compiler-utils",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "@vue/component-compiler-utils",
+            "postcss"
+          ],
+          ["vue-loader", "@vue/component-compiler-utils", "postcss"],
+          ["autoprefixer", "postcss"],
+          ["css-declaration-sorter", "postcss"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "css-loader",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "css-loader",
+            "postcss"
+          ],
+          ["@vue/cli-plugin-vuex", "@vue/cli-service", "css-loader", "postcss"],
+          ["@intervolga/optimize-cssnano-plugin", "cssnano", "postcss"],
+          ["@vue/cli-plugin-babel", "@vue/cli-service", "cssnano", "postcss"],
+          ["@vue/cli-plugin-router", "@vue/cli-service", "cssnano", "postcss"],
+          ["@vue/cli-plugin-vuex", "@vue/cli-service", "cssnano", "postcss"],
+          [
+            "@intervolga/optimize-cssnano-plugin",
+            "cssnano",
+            "cssnano-preset-default",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "cssnano",
+            "cssnano-preset-default",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "cssnano",
+            "cssnano-preset-default",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "cssnano",
+            "cssnano-preset-default",
+            "postcss"
+          ],
+          ["cssnano-util-raw-cache", "postcss"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "css-loader",
+            "icss-utils",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "css-loader",
+            "icss-utils",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "css-loader",
+            "icss-utils",
+            "postcss"
+          ],
+          ["postcss-modules-local-by-default", "icss-utils", "postcss"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "css-loader",
+            "postcss-modules-values",
+            "icss-utils",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "css-loader",
+            "postcss-modules-values",
+            "icss-utils",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "css-loader",
+            "postcss-modules-values",
+            "icss-utils",
+            "postcss"
+          ],
+          ["postcss-calc", "postcss"],
+          ["postcss-colormin", "postcss"],
+          ["postcss-convert-values", "postcss"],
+          ["postcss-discard-comments", "postcss"],
+          ["postcss-discard-duplicates", "postcss"],
+          ["postcss-discard-empty", "postcss"],
+          ["postcss-discard-overridden", "postcss"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "postcss-loader",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "postcss-loader",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "postcss-loader",
+            "postcss"
+          ],
+          ["postcss-merge-longhand", "postcss"],
+          ["postcss-merge-rules", "postcss"],
+          ["postcss-minify-font-values", "postcss"],
+          ["postcss-minify-gradients", "postcss"],
+          ["postcss-minify-params", "postcss"],
+          ["postcss-minify-selectors", "postcss"],
+          ["postcss-modules-extract-imports", "postcss"],
+          ["postcss-modules-local-by-default", "postcss"],
+          ["postcss-modules-scope", "postcss"],
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "css-loader",
+            "postcss-modules-values",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "css-loader",
+            "postcss-modules-values",
+            "postcss"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "css-loader",
+            "postcss-modules-values",
+            "postcss"
+          ],
+          ["postcss-normalize-charset", "postcss"],
+          ["postcss-normalize-display-values", "postcss"],
+          ["postcss-normalize-positions", "postcss"],
+          ["postcss-normalize-repeat-style", "postcss"],
+          ["postcss-normalize-string", "postcss"],
+          ["postcss-normalize-timing-functions", "postcss"],
+          ["postcss-normalize-unicode", "postcss"],
+          ["postcss-normalize-url", "postcss"],
+          ["postcss-normalize-whitespace", "postcss"],
+          ["postcss-ordered-values", "postcss"],
+          ["postcss-reduce-initial", "postcss"],
+          ["postcss-reduce-transforms", "postcss"],
+          ["postcss-svgo", "postcss"],
+          ["postcss-unique-selectors", "postcss"],
+          ["postcss-merge-longhand", "stylehacks", "postcss"]
+        ]
+      },
+      {
+        "name": "tough-cookie",
+        "severity": "moderate",
+        "problems": [
+          {
+            "source": 1097682,
+            "name": "tough-cookie",
+            "dependency": "tough-cookie",
+            "title": "tough-cookie Prototype Pollution vulnerability",
+            "url": "https://github.com/advisories/GHSA-72xf-g2v4-qvf3",
+            "severity": "moderate",
+            "cwe": ["CWE-1321"],
+            "cvss": {
+              "score": 6.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+            },
+            "range": "<4.1.3"
+          }
+        ],
+        "nodes": ["node_modules/tough-cookie"],
+        "depChains": [
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "@vue/cli-plugin-router",
+            "@vue/cli-shared-utils",
+            "request",
+            "tough-cookie"
+          ],
+          [
+            "@vue/cli-service",
+            "@vue/cli-plugin-router",
+            "@vue/cli-shared-utils",
+            "request",
+            "tough-cookie"
+          ],
+          [
+            "@vue/cli-plugin-vuex",
+            "@vue/cli-service",
+            "@vue/cli-plugin-router",
+            "@vue/cli-shared-utils",
+            "request",
+            "tough-cookie"
+          ]
+        ]
+      },
+      {
+        "name": "vue-template-compiler",
+        "severity": "moderate",
+        "problems": [
+          {
+            "source": 1098721,
+            "name": "vue-template-compiler",
+            "dependency": "vue-template-compiler",
+            "title": "vue-template-compiler vulnerable to client-side Cross-Site Scripting (XSS)",
+            "url": "https://github.com/advisories/GHSA-g3ch-rx76-35fx",
+            "severity": "moderate",
+            "cwe": ["CWE-79"],
+            "cvss": {
+              "score": 4.2,
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N"
+            },
+            "range": ">=2.0.0 <3.0.0"
+          }
+        ],
+        "nodes": ["node_modules/vue-template-compiler"],
+        "depChains": [
+          [
+            "@vue/cli-plugin-babel",
+            "@vue/cli-service",
+            "vue-template-compiler"
+          ],
+          [
+            "@vue/cli-plugin-router",
+            "@vue/cli-service",
+            "vue-template-compiler"
+          ],
+          ["@vue/cli-plugin-vuex", "@vue/cli-service", "vue-template-compiler"]
+        ]
+      }
+    ],
+    "low": [
+      {
+        "name": "vue",
+        "severity": "low",
+        "problems": [
+          {
+            "source": 1100238,
+            "name": "vue",
+            "dependency": "vue",
+            "title": "ReDoS vulnerability in vue package that is exploitable through inefficient regex evaluation in the parseHTML function",
+            "url": "https://github.com/advisories/GHSA-5j4c-8p2g-v4jx",
+            "severity": "low",
+            "cwe": ["CWE-1333"],
+            "cvss": {
+              "score": 3.7,
+              "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            },
+            "range": ">=2.0.0-alpha.1 <3.0.0-alpha.0"
+          }
+        ],
+        "nodes": ["node_modules/vue"],
+        "depChains": [["vuex", "vue"]]
+      }
+    ]
+  },
+  "summary": {
+    "total": 21,
+    "critical": 4,
+    "high": 13,
+    "moderate": 3,
+    "low": 1
+  }
+}
