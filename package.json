@@ -1,6 +1,7 @@
 {
   "name": "mcp-web-audit",
-  "version": "1.0.0",
+  "author": "shenzhihao",
+  "version": "1.0.1",
   "description": "一个基于 Node.js 的前端工程安全审计工具，支持对本地项目和远程仓库进行全面的依赖安全审计",
   "main": "src/entry/index.js",
   "type": "module",
@@ -25,7 +26,6 @@
     "安全审计",
     "漏洞检测"
   ],
-  "author": "shenzhihao",
   "license": "ISC",
   "repository": {
     "type": "git",

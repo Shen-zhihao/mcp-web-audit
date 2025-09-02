@@ -143,33 +143,14 @@ async function main() {
     console.log(`📄 输出文件: ${options.outputPath}`);
     console.log("");
 
-    // 显示进度提示
-    const progressSteps = [
-      "📦 解析项目结构...",
-      "🔐 生成依赖锁定文件...",
-      "🔍 执行安全扫描...",
-      "📊 生成审计报告...",
-    ];
-
-    let currentStep = 0;
-    const showProgress = () => {
-      if (currentStep < progressSteps.length) {
-        console.log(progressSteps[currentStep]);
-        currentStep++;
-      }
-    };
-
-    // 每隔2秒显示下一个进度步骤
-    const progressInterval = setInterval(showProgress, 2000);
-    showProgress(); // 立即显示第一步
-
     const startTime = Date.now();
 
-    try {
-      await auditPackage(options.projectPath, options.outputPath);
-    } finally {
-      clearInterval(progressInterval);
-    }
+    // 简单的进度提示，让用户知道正在处理
+    console.log("📦 正在解析项目并执行安全审计...");
+    console.log("💪 请耐心等待，这可能需要几分钟时间...");
+    console.log("");
+
+    await auditPackage(options.projectPath, options.outputPath);
 
     const endTime = Date.now();
     const duration = ((endTime - startTime) / 1000).toFixed(2);
