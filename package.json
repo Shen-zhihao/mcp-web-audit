@@ -1,15 +1,49 @@
 {
-  "name": "mcp-audit",
+  "name": "mcp-web-audit",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "一个基于 Node.js 的前端工程安全审计工具，支持对本地项目和远程仓库进行全面的依赖安全审计",
+  "main": "src/entry/index.js",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "mcp-web-audit": "./bin/cli.js"
   },
-  "keywords": [],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/mcpServer.js",
+    "prepublishOnly": "node bin/cli.js --version && echo '✅ CLI测试通过'",
+    "postinstall": "echo '🎉 mcp-web-audit 安装成功! 使用 npx mcp-web-audit --help 查看使用说明'"
+  },
+  "keywords": [
+    "security",
+    "audit",
+    "npm",
+    "vulnerability",
+    "frontend",
+    "dependencies",
+    "cli",
+    "mcp",
+    "安全审计",
+    "漏洞检测"
+  ],
   "author": "shenzhihao",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shenzhihao/mcp-web-audit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shenzhihao/mcp-web-audit/issues"
+  },
+  "homepage": "https://github.com/shenzhihao/mcp-web-audit#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "package.json"
+  ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.1",
     "ejs": "^3.1.10",

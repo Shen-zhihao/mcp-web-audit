@@ -9,6 +9,7 @@
 - 📊 **详细报告**: 生成标准格式的 Markdown 审计报告
 - 🔌 **MCP 集成**: 作为 MCP (Model Context Protocol) 服务器提供审计服务
 - ⚡ **自动化**: 全自动化的审计流程，无需手动干预
+- 🚀 **CLI 支持**: 支持通过 npx 直接调用，无需安装
 
 ## 📋 审计内容
 
@@ -20,13 +21,89 @@
 
 ## 🚀 快速开始
 
-### 安装依赖
+### 使用 npx (推荐)
+
+无需安装，直接使用：
 
 ```bash
-npm install
+# 审计本地项目
+npx mcp-web-audit /path/to/your/project
+
+# 审计远程仓库
+npx mcp-web-audit https://github.com/user/repo
+
+# 指定输出文件
+npx mcp-web-audit /path/to/project -o ./my-audit.md
+
+# 查看帮助
+npx mcp-web-audit --help
+
+# 查看版本
+npx mcp-web-audit --version
 ```
 
-### 基本使用
+### 全局安装
+
+```bash
+# 全局安装
+npm install -g mcp-web-audit
+
+# 使用命令
+mcp-web-audit /path/to/your/project
+```
+
+### 本地安装开发版本
+
+```bash
+# 克隆仓库
+git clone https://github.com/shenzhihao/mcp-web-audit.git
+cd mcp-web-audit
+
+# 安装依赖
+npm install
+
+# 本地测试
+node bin/cli.js /path/to/test/project
+```
+
+## 🚀 CLI 使用说明
+
+### 基本用法
+
+```bash
+npx mcp-web-audit [options] <项目路径>
+```
+
+### 参数说明
+
+- `<项目路径>`: 要审计的项目路径（本地绝对路径或远程仓库 URL）
+
+### 选项
+
+- `-o, --output <文件>`: 指定输出报告的文件路径 (默认: `./audit-report.md`)
+- `-h, --help`: 显示帮助信息
+- `-v, --version`: 显示版本信息
+
+### 使用示例
+
+```bash
+# 审计当前目录
+npx mcp-web-audit .
+
+# 审计指定本地项目
+npx mcp-web-audit /Users/username/my-project
+
+# 审计GitHub仓库
+npx mcp-web-audit https://github.com/facebook/react
+
+# 指定输出文件名
+npx mcp-web-audit ./my-project -o security-report.md
+
+# 查看帮助信息
+npx mcp-web-audit --help
+```
+
+### 作为 MCP 服务器运行
 
 #### 作为 MCP 服务器运行
 
@@ -34,10 +111,10 @@ npm install
 node src/mcpServer.js
 ```
 
-#### 编程式调用
+### 编程式调用
 
 ```javascript
-import { auditPackage } from "./src/entry/index.js";
+import { auditPackage } from "mcp-web-audit";
 
 // 审计本地项目
 await auditPackage("/path/to/your/project", "./audit-report.md");
@@ -45,6 +122,25 @@ await auditPackage("/path/to/your/project", "./audit-report.md");
 // 审计远程仓库
 await auditPackage("https://github.com/user/repo", "./audit-report.md");
 ```
+
+## 📊 审计报告示例
+
+生成的审计报告包含以下信息：
+
+- **项目概述**: 项目名称、版本等基本信息
+- **漏洞汇总**: 按严重程度统计的漏洞数量
+- **详细漏洞列表**: 每个漏洞的详细信息，包括：
+  - 漏洞描述
+  - 影响的包和版本
+  - 严重程度评级
+  - 修复建议
+  - 相关链接
+
+## 📝 要求
+
+- **Node.js**: >= 14.0.0
+- **网络**: 审计远程仓库时需要网络连接
+- **磁盘空间**: 至少 100MB 空闲空间（用于临时文件）
 
 ## 📁 项目结构
 
@@ -112,6 +208,30 @@ await auditPackage("https://github.com/facebook/react", "./react-audit.md");
   - 严重程度评级
   - 修复建议
   - 相关链接
+
+## 📦 发布到 npm
+
+如果你是项目维护者，可以按以下步骤发布到 npm：
+
+```bash
+# 1. 登录 npm （如果还没有登录）
+npm login
+
+# 2. 检查版本号（确保版本号是新的）
+npm version patch  # 或者 minor/major
+
+# 3. 发布到 npm
+npm publish
+
+# 4. 验证发布是否成功
+npx mcp-web-audit --version
+```
+
+### 发布注意事项
+
+- 确保 `package.json` 中的 `name` 字段在 npm 上是唯一的
+- 检查 `files` 字段，确保包含所有必要的文件
+- 测试版本可以使用 `npm publish --tag beta`
 
 ## 🛠️ 技术栈
 
